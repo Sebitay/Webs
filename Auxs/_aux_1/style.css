@@ -1,0 +1,82 @@
+:root {
+  --color-borde: #dbdbdb;
+}
+
+.container {
+  border: 1px solid var(--color-borde);
+  height: 50%;
+  max-width: 350px;
+  margin: 2% auto;
+  padding: 2rem;
+  padding-top: .5rem;
+  background-color: #ffffff;
+}
+
+.logo {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#bajada {
+  text-align: center;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.grupo-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+}
+
+label {
+  padding-bottom: 1rem;
+  cursor: pointer;
+}
+
+#apellido {
+  display: flex;
+  flex-direction: column;
+}
+
+#envio {
+  background-color: #4bb4f8;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 20px;
+  padding: 2% 5%;
+  width: 100%;
+  cursor: pointer;
+}
+
+#envio:hover {
+  background-color: #1177bb;
+}
+
+#logo-id {
+  width: 250px;
+  margin: 0 auto;
+}
+
+label > input {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+input {
+  border: 1px solid var(--color-borde);
+  background-color: #fafafa;
+  height: 20px;
+  padding: 9px;
+}

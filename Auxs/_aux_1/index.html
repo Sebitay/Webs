@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Confesiones 851</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img id="logo-id" src="Confesiones.svg" alt="Logo de Confesiones 851"/>
+        <p id="bajada">Regístrate para mandar tu confesión 🥵</p>
+      </div>
+      <form class="formulario" action="">
+        <div id="mail-input" class="grupo-input">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div id="nombre-input" class="grupo-input">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" minlength="4" required>
+        </div>
+        <div id="apellido-input" class="grupo-input">
+          <label for="apellido">Apellido</label>
+          <input id="apellido" name="apellido" type="text" maxlength="12" required>
+        </div>
+        <div id="contrasenna-input" class="grupo-input">
+          <label for="contrasenna">Contraseña</label>
+          <input id="contrasenna" name="contrasenna" type="password" required>
+        </div>
+        <div class="botones">
+          <button type="button" id="envio" onclick="validarForm()">
+            Registrarse
+          </button>
+        </div>
+      </form>
+    </div>
+    <script lang="javascript" src="validador.js"></script>
+  </body>
+</html>
