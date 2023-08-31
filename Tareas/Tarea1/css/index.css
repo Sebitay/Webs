@@ -1,0 +1,135 @@
+/* CSS */
+
+body {
+    background-repeat: no-repeat;
+    background-image: url("../Imagenes/Background.png");    
+    background-position-x: center;
+    background-position-y: -50px;
+    object-fit: fill;
+    margin: 0;
+    width: 100%;
+    max-height: 100vh;
+    margin-left: auto;
+}
+
+.navbar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    font-family: "Fira Code", monospace;   
+    align-items: center;
+    background: linear-gradient(to bottom, #ffffffcc 0%, #ffffffcc 87%, #ffffff00 100%);
+    color: #0074ff;
+    margin: 0;
+    padding-top: 0.35em;
+    padding-bottom: 0.5em;
+    width: auto;
+
+}
+
+.detalles{
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    margin: 0 2em;
+    font-weight: 600;
+    font-size: 1rem;
+    padding-bottom: 0.4rem;
+}
+
+.detalles p{
+    margin: 0.1rem;
+    margin-top: 0.3rem;
+}
+
+.tareaNombre {
+    border-left: 3px solid;
+    border-color: #fe4f3a;  
+    margin-right: auto;
+    padding-left: 1rem;
+}
+
+.tareaNombre h1{ 
+    color: #00cccc;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.tareaNombre p{ 
+    font-weight: 600;
+    margin-right: auto;
+    padding-bottom: 0.2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#logo-id {
+    width: 300px;
+    margin-left: 0.7rem;
+    margin-right: 1rem;
+    padding: .25rem;
+}
+
+.titulo {
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 600;   
+    font-size: 30px;
+}
+
+.someHeader {
+    height: 150px;
+}
+
+.container {
+    text-align: center;
+}
+.gap {
+    height: 10px;
+}
+
+.button-5 {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #fe4f3a;
+  border: 3px solid;
+  border-color: #fb8332;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 270px;
+}
+
+.button-5:hover,
+.button-5:focus {
+  background-color: #fb8332;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.button-5:hover {
+  transform: translateY(-1px);
+}
+
+.button-5:active {
+  background-color: #c85000;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
