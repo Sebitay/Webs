@@ -4,8 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel = "stylesheet" type = "text/css" href = "../css/agregar-hincha.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 </head>
 <body>
-    
+    <div class="navbar">
+        <img id="logo-id" src="../Imagenes/Logo.png" alt="Logo de Confesiones 851"/>
+        <div class = "tareaNombre"> 
+            <h1>Tarea 1</h1>
+            <p>Sebastián Valenzuela</p>
+        </div>
+        <div class = "detalles">
+            <p>CC5002-1</p>
+            <p>José Urzúa</p>
+        </div>
+    </div>
+    <div class="container" id = "body">
+        <form class="formulario">
+            <div class = "deportes-input">
+                <label for="deportesBtn">Que deportes te interesan:</label>
+                <button class = "buttons", type = "button", id = "deportesBtn">Elige tus deportes...</button>
+                <div class = "bordeDrop" id = "bordeDrop" style = "display: none;">
+                    <header class = "someHeader"></header>
+                    <div class = "dropdown-deportes" id = "dropdown-deportes">
+                    </div>
+                </div>
+            </div>
+            <div class="region-input">
+                <label for="regiones">Región donde vives: </label>
+                <select name="regiones" id="regiones" required>
+                    <option value="default">Elige una región...</option>
+                    <option value="arica-y-parinacota">Región de Arica y Parinacota</option>
+                    <option value="tarapaca">Región de Tarapacá</option>
+                    <option value="antofagasta">Región de Antofagasta</option>
+                    <option value="atacama">Región de Atacama</option>
+                    <option value="coquimbo">Región de Coquimbo</option>
+                    <option value="valparaiso">Región de Valparaíso</option>
+                    <option value="metropolitana">Región Metropolitana</option>
+                    <option value="ohiggins">Región de O’Higgins</option>
+                    <option value="maule">Región del Maule</option>
+                    <option value="ñuble">Región del Ñuble</option>
+                    <option value="biobio">Región del Biobío</option>
+                    <option value="araucania">Región de La Araucanía</option>
+                    <option value="rios">Región de Los Ríos</option>
+                    <option value="lagos">Región de Los Lagos</option>
+                    <option value="aysen">Región de Aysén</option>
+                    <option value="magallanes">Región de Magallanes</option>
+                </select>
+            </div>
+            <div class = "comuna-input">
+                <label for="comunas">Comuna donde vives: </label>
+                <select name="comunas" id="comunas">
+                    <option value="default">Elige una región primero</option> 
+                </select>
+            </div>
+        </form>
+    </div>
+    <script lang="javascript" src="../JavaScript/agregar-hincha.js"></script>
 </body>
 </html>
