@@ -14,6 +14,10 @@ const entrarVerArtesano = () => {
     window.location.href = "../html/ver-artesanos.html"
 } 
 
+const entrarIndex = () =>{
+    window.location.href = "../html/index.html"
+}
+
 let agregarHinchaBtn = document.getElementById("agregar-hincha");
 agregarHinchaBtn.addEventListener("click", entrarAgregarHincha);
 
@@ -25,3 +29,6 @@ verHinchaBtn.addEventListener("click", entrarVerHincha);
 
 let verArtesanoBtn = document.getElementById("ver-artesanos");
 verArtesanoBtn.addEventListener("click", entrarVerArtesano);
+
+let logo = document.getElementById("logo-id");
+logo.addEventListener("click",entrarIndex);

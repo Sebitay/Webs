@@ -36,6 +36,10 @@ const dropdown = () =>{
     }
 }
 
+const entrarIndex = () =>{
+    window.location.href = "../html/index.html"
+}
+
 /*Listas de comunas*/
 let comunas = {};
 
@@ -92,12 +96,39 @@ const crearComunas = () =>{
     }
 }
 
+const validarDeportes = () =>{
+    let boxes = document.getElementsByClassName("checkbox");
+    let n = 0;
+    for(let i = 0; i<boxes.length; i++){
+        if(boxes[i].checked){
+            n++;
+        }
+    }
+    return n>0 && n<4
+}
+
+const validarForm = () =>{
+    let texto = "";
+    if(validarDeportes()){
+        texto = "cool";
+    }else{
+        texto = "not cool";
+    }
+    alert(texto);
+}
+
+
 
 agregarDeportes();
 
-/*Revisar si hay un cambio en la region donde vive*/
 let region = document.getElementById("regiones");
 region.addEventListener("change", crearComunas);
 
 let dropButton = document.getElementById("deportesBtn");
 dropButton.addEventListener("click",dropdown)
+
+let logo = document.getElementById("logo-id");
+logo.addEventListener("click",entrarIndex);
+
+let registrar = document.getElementById("register");
+registrar.addEventListener("click",validarForm);

@@ -1,4 +1,5 @@
 body {
+    text-align: center;
     background-repeat: no-repeat;
     background-image: url("../Imagenes/Background.png");    
     background-position-x: center;
@@ -70,12 +71,18 @@ body {
     padding: .25rem;
 }
 
+form{
+    text-align: right;
+    margin: auto;
+    width:  442px;
+}
+
 .bordeDrop{
-    width: 217px;
+    width: 221px;
     height: 510px;
     overflow: auto;
     position: absolute;
-    left: 170px;
+    left: 50%;
     background-color: #FFFFFF;
     border:  1px solid #505050;
     border-radius: 5px;
@@ -88,16 +95,26 @@ body {
 .someHeader{
     height: 5px;
 }
+
 .dropdown-deportes{
+    text-align: left;
     height: 500px;
     overflow: auto;
     border-radius: 5px;
-    
 }
-.buttons{
 
-    width: 217px;
+.select-inputs{
+    width: 221px;
     text-align: left;
+    margin-top: 1px;
+}
+
+
+.text-inputs{
+    width: 213px;
+    text-align: left;
+    margin-top: 1px;
+    margin-bottom: 0px;
 }
 
 .deporteCheck{
@@ -113,4 +130,12 @@ body {
 }
 .region-input{
     z-index: 1;
+}
+
+textarea{
+    vertical-align: top;
+}
+
+.registBtn {
+    margin: auto;
 }
