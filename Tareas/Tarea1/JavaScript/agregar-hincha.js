@@ -27,6 +27,17 @@ const agregarDeportes = () =>{
     }
 }
 
+document.addEventListener('click', function handleClickOutsideBox(event){
+    let hideDeportes = document.getElementById("bordeDrop");
+    let btnDeportes = document.getElementById("deportesBtn");
+    let labelDeportes = document.getElementById("deportesLabel");
+    if(!hideDeportes.contains(event.target) && !btnDeportes.contains(event.target) && !labelDeportes.contains(event.target)){
+        if(hideDeportes.style.display == "block"){
+            hideDeportes.style.display = "none"
+        }
+    }
+})
+
 const dropdown = () =>{
     let dropdownDeportes = document.getElementById("bordeDrop");
     if(dropdownDeportes.style.display === "none"){
@@ -77,7 +88,7 @@ const crearComunas = () =>{
         let newOption = document.createElement("option");
         let optionText = document.createTextNode("Elige una comuna...");
         newOption.appendChild(optionText); 
-        newOption.setAttribute("default","default");
+        newOption.setAttribute("value","default");
         select.appendChild(newOption);
         for(comuna in comunas[region.value]){
             nombreComuna = comunas[region.value][comuna];
@@ -96,6 +107,7 @@ const crearComunas = () =>{
     }
 }
 
+
 const validarDeportes = () =>{
     let boxes = document.getElementsByClassName("checkbox");
     let n = 0;
@@ -106,18 +118,69 @@ const validarDeportes = () =>{
     }
     return n>0 && n<4
 }
+const validarRegion = () =>{
+    let region = document.getElementById("regiones");
+    return region.value !== "default";
+}
+const validarComuna = () =>{
+    let region = document.getElementById("regiones");
+    let comuna = document.getElementById("comunas");
+    let validarC = comuna.value !== "default";
+    validarC &= comunas[region.value].includes(comuna.value);
+    return validarC;
+}
+const validarTrans = () => {
+    let transporte = document.getElementById("transporte");
+    return transporte.value !== "default";
+}
+const validarNombre = () =>{
+    let nombre = document.getElementById("nombre");
+    return nombre.value.length > 2 && nombre.value.length < 81;
+}
+const validarEmail = () =>{
+    let Email = document.getElementById("email");
+    return /^[\w-\.]+@([\w-]+\.)+[\w-]+/.test(Email.value);
+}
+const validarFono = () => {
+    let fono = document.getElementById("fono");
+    return /(^[\+]569[0-9]{8})$|^([0-9]{8})$/.test(fono.value);
+}
 
 const validarForm = () =>{
-    let texto = "";
-    if(validarDeportes()){
+    let texto = ""
+    let validar = validarDeportes();
+    if(!validarDeportes()){
+        texto += "Seleccione entre 1 y 3 deportes.\n";
+    }
+    validar &&= validarRegion();
+    if(!validarRegion()){
+        texto += "Seleccione una region.\n";
+    }
+    validar &&= validarComuna();
+    if(!validarComuna()){
+        texto+= "Seleccione una comuna.\n";
+    }
+    validar &&= validarTrans();
+    if(!validarTrans()){
+        texto += "Seleccione un meido de transorte.\n";
+    }
+    validar &&= validarNombre();
+    if(!validarNombre()){
+        texto += "El nombre ingresado de tener entre 3 y 80 characteres.\n";
+    }
+    validar &&= validarEmail();
+    if(!validarEmail()){
+        texto += "Email invalido.\n";
+    }
+    validar &&= validarFono();
+    if(!validarFono()){
+        texto += "Telefo invalido (debe de ser un telefono de 8 digitos con o sin +569).\n";
+    }
+    if(validar){
         texto = "cool";
-    }else{
-        texto = "not cool";
     }
     alert(texto);
 }
-
-
 
 agregarDeportes();
 

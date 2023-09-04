@@ -43,6 +43,7 @@ body {
 }
 
 .tareaNombre {
+    text-align: left;
     border-left: 3px solid;
     border-color: #fe4f3a;  
     margin-right: auto;

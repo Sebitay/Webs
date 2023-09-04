@@ -22,8 +22,8 @@
     </div>
     <div class="container" id = "body">
         <form class="formulario">
-            <div class = "deportes-input">
-                <label for="deportesBtn">Que deportes te interesan:</label>
+            <div class = "deportes-input" id = "deportes-input">
+                <label for="deportesBtn" id = "deportesLabel">Que deportes te interesan:</label>
                 <button class = "select-inputs", type = "button", id = "deportesBtn">Elige tus deportes...</button>
                 <div class = "bordeDrop" id = "bordeDrop" style = "display: none;">
                     <header class = "someHeader"></header>
@@ -33,7 +33,7 @@
             </div>
             <div class="region-input">
                 <label for="regiones">Región donde vives: </label>
-                <select name="regiones" id="regiones" class = "select-inputs" required>
+                <select name="regiones" id="regiones" class = "select-inputs" autocomplete="off" required>
                     <option value="default">Elige una región...</option>
                     <option value="arica-y-parinacota">Región de Arica y Parinacota</option>
                     <option value="tarapaca">Región de Tarapacá</option>
@@ -55,13 +55,13 @@
             </div>
             <div class = "comuna-input">
                 <label for="comunas">Comuna donde vives: </label>
-                <select name="comunas" id="comunas" class = "select-inputs">
+                <select name="comunas" id="comunas" class = "select-inputs" required>
                     <option value="default">Elige una región primero</option> 
                 </select>
             </div>
             <div class = "transporte-input">
                 <label for="transporte">Modo de transporte: </label>
-                <select name="transporte" id="transporte" class = "select-inputs">
+                <select name="transporte" id="transporte" class = "select-inputs" autocomplete="off" required>
                     <option value="default">Elige un modo de transporte...</option>
                     <option value="particular">Particular</option>
                     <option value="colectiva">Locomoción colectiva</option>
