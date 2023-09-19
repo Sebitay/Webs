@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel = "stylesheet" type = "text/css" href = "../css/agregar-hincha.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 </head>
 <body>
     <div class="navbar">
-        <img id="logo-id" src="../Imagenes/Logo.png" alt="Logo de Confesiones 851"/>
+        <img id="logo-id" src="../Imagenes/Logo.png" alt="Logo de Confesiones 851">
         <div class = "tareaNombre"> 
             <h1>Tarea 1</h1>
             <p>Sebastián Valenzuela</p>
@@ -22,19 +20,21 @@
     </div>
     <div class="container" id = "body">
         <form class="formulario">
-            <div class = "deportes-input" id = "deportes-input">
-                <label for="deportesBtn" id = "deportesLabel">Que deportes te interesan:</label>
-                <button class = "select-inputs", type = "button", id = "deportesBtn">Elige tus deportes...</button>
-                <div class = "bordeDrop" id = "bordeDrop" style = "display: none;">
-                    <header class = "someHeader"></header>
-                    <div class = "dropdown-deportes" id = "dropdown-deportes">
+            <div class = "deportes-input" id = "deportes-input" style = "display: flex; justify-content: center;" >
+                <label for="deportesBtn" id = "deportesLabel">Que deportes te interesan: </label>
+                <div>
+                    <button class = "select-inputs" type = "button" id = "deportesBtn">Elige tus deportes...</button>
+                    <div class = "bordeDrop" id = "bordeDrop" style = "display: none;">
+                        <header class = "someHeader"></header>
+                        <div class = "dropdown-deportes" id = "dropdown-deportes">
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="region-input">
                 <label for="regiones">Región donde vives: </label>
                 <select name="regiones" id="regiones" class = "select-inputs" autocomplete="off" required>
-                    <option value="default">Elige una región...</option>
+                    <option value="">Elige una región...</option>
                     <option value="arica-y-parinacota">Región de Arica y Parinacota</option>
                     <option value="tarapaca">Región de Tarapacá</option>
                     <option value="antofagasta">Región de Antofagasta</option>
@@ -56,32 +56,32 @@
             <div class = "comuna-input">
                 <label for="comunas">Comuna donde vives: </label>
                 <select name="comunas" id="comunas" class = "select-inputs" required>
-                    <option value="default">Elige una región primero</option> 
+                    <option value="">Elige una región primero</option> 
                 </select>
             </div>
             <div class = "transporte-input">
                 <label for="transporte">Modo de transporte: </label>
                 <select name="transporte" id="transporte" class = "select-inputs" autocomplete="off" required>
-                    <option value="default">Elige un modo de transporte...</option>
+                    <option value="">Elige un modo de transporte...</option>
                     <option value="particular">Particular</option>
                     <option value="colectiva">Locomoción colectiva</option>
                 </select>
             </div>
             <div class = "nombre-input">
                 <label for="nombre">Nombre: </label>
-                <input type="text" id = "nombre" class = "text-inputs" autocomplete="off" required>
+                <input type="text" id = "nombre" class = "text-inputs" autocomplete="off" size = "80" required>
             </div>
             <div class = "email-input">
                 <label for="email">Email de contacto: </label>
-                <input type="text" id = "email" class = "text-inputs" autocomplete="off" required>
+                <input type="text" id = "email" class = "text-inputs" autocomplete="off" size = "30" required>
             </div>
             <div class = "fono-input">
                 <label for="fono">Telefono de contacto: </label>
-                <input type="text" id = "fono" class = "text-inputs" autocomplete="off">
+                <input type="text" id = "fono" class = "text-inputs" autocomplete="off" size = "15">
             </div>
             <div class = "comentario-input">
                 <label for="comentario">Comentarios adicionales: </label>
-                <textarea name="comentario" id="comentario" style = "resize: none;" rows="4" cols="25" class = "text-inputs" autocomplete="off"></textarea>
+                <input type = "text" id="comentario" class = "text-inputs" autocomplete="off" size = "80">
             </div>
             <div class = "registBtn">
                 <button type="button" id = "register">Registrarse</button>
@@ -91,6 +91,6 @@
             <h1 id = "validar"></h1>
         </div>
     </div>
-    <script lang="javascript" src="../JavaScript/agregar-hincha.js"></script>
+    <script lang="en" src="../JavaScript/agregar-hincha.js"></script>
 </body>
 </html>

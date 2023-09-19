@@ -80,7 +80,6 @@ form{
 
 .bordeDrop{
     width: 221px;
-    height: 510px;
     overflow: auto;
     position: absolute;
     background-color: #FFFFFF;
@@ -96,11 +95,11 @@ form{
     height: 5px;
 }
 
-.dropdown-deportes{
+.dropdown-artesanias{
     text-align: left;
-    height: 500px;
     overflow: auto;
-    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .select-inputs{

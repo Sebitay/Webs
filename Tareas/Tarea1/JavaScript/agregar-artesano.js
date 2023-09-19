@@ -1,49 +1,49 @@
 /*Lista de deportes*/
-let deportes = ["Clavados","Natación","Natación artística","Polo acuático","Natación en aguas abiertas","Maratón","Marcha","Atletismo","Bádminton","Balonmano","Básquetbol","Básquetbol 3x3","Béisbol","Boxeo","Bowling","Breaking","Cantonaje","Cantonaje slalom","Cantonaje de velocidad","BMX freestyle","BMX racing","Mountain bike","Ciclismo Pista","Ciclismo ruta","Adiestramiento ecuestre","Evento completo ecuestre","Salto ecuestre","Escalada deportiva","Esgrima","Esquí acuático y Wakeboard","Fútbol","Gimnasia artística Masculina","Gimnasia artística Femenina","Gimnasia rítmica","Gimnasia trampolín","Golf","Hockey césped","Judo","Karete","Levantamiento de pesas","Lucha","Patinaje artístico","Skateboarding","Patinaje velocidad","Pelota vasca","Pentatlón moderno","Racquetball","Remo","Rugby 7","Sóftbol","Squash","Surf","Taekwondo","Tenis","Tenis de mesa","Tiro","Tiro con arco","Triatlón","Vela","Vóleibol","Vóleibol playa"];
-deportes.sort();
-const agregarDeportes = () =>{
-    let deporteDiv = document.createElement("div");
-    let deportesid = document.getElementById("dropdown-deportes");
+let artesanias = ["Mármol", "Madera", "Cerámica", "Mimbre", "Metal" , "Cuero", "Telas", "Joyas", "Otro tipo"]
+artesanias.sort();
+const agregarArtesania = () =>{
+    let artesaniaDiv = document.createElement("div");
+    let artesaniaid = document.getElementById("dropdown-artesanias");
     let label = document.createElement("label");
-    let newDeporte = document.createElement("input");
-    let deporteText = document.createTextNode("Natación");
-    for(let i = 0; i < deportes.length; i++){
-        let deporte = deportes[i];
-        deporteDiv = document.createElement("div");
+    let newArtesania = document.createElement("input");
+    let artesaniaText = document.createTextNode("Greda");
+    for(let i = 0; i < artesanias.length; i++){
+        let artesania = artesanias[i];
+        artesaniaDiv = document.createElement("div");
         label = document.createElement("label");
-        newDeporte = document.createElement("input");
-        deporteText = document.createTextNode(deporte);
-        deporteDiv.className = "deporteCheck";
-        deporteDiv.setAttribute("onclick","this.querySelector('input[type=checkbox]').click()")
-        newDeporte.type = "checkbox";
-        newDeporte.setAttribute("style","pointer-events: none;")
-        newDeporte.className = "checkbox";
-        newDeporte.id = deporte;
-        label.htmlFor = deporte;
-        label.appendChild(deporteText);
-        deporteDiv.appendChild(newDeporte);
-        deporteDiv.appendChild(label);
-        deportesid.appendChild(deporteDiv);
+        newArtesania = document.createElement("input");
+        artesaniaText = document.createTextNode(artesania);
+        artesaniaDiv.className = "artesaniaCheck";
+        artesaniaDiv.setAttribute("onclick","this.querySelector('input[type=checkbox]').click()")
+        newArtesania.type = "checkbox";
+        newArtesania.setAttribute("style","pointer-events: none;")
+        newArtesania.className = "checkbox";
+        newArtesania.id = artesania;
+        label.htmlFor = artesania;
+        label.appendChild(artesaniaText);
+        artesaniaDiv.appendChild(newArtesania);
+        artesaniaDiv.appendChild(label);
+        artesaniaid.appendChild(artesaniaDiv);
     }
 }
 
 document.addEventListener('click', function handleClickOutsideBox(event){
-    let hideDeportes = document.getElementById("bordeDrop");
-    let btnDeportes = document.getElementById("deportesBtn");
-    let labelDeportes = document.getElementById("deportesLabel");
-    if(!hideDeportes.contains(event.target) && !btnDeportes.contains(event.target) && !labelDeportes.contains(event.target)){
-        if(hideDeportes.style.display == "block"){
-            hideDeportes.style.display = "none"
+    let hideArtesania = document.getElementById("bordeDrop");
+    let btnArtesania = document.getElementById("artesaniaBtn");
+    let labelArtesania = document.getElementById("artesaniaLabel");
+    if(!hideArtesania.contains(event.target) && !btnArtesania.contains(event.target) && !labelArtesania.contains(event.target)){
+        if(hideArtesania.style.display == "block"){
+            hideArtesania.style.display = "none"
         }
     }
 })
 
 const dropdown = () =>{
-    let dropdownDeportes = document.getElementById("bordeDrop");
-    if(dropdownDeportes.style.display === "none"){
-        dropdownDeportes.style.display = "block";
+    let dropdownArtesania = document.getElementById("bordeDrop");
+    if(dropdownArtesania.style.display === "none"){
+        dropdownArtesania.style.display = "block";
     }else{
-        dropdownDeportes.style.display = "none";
+        dropdownArtesania.style.display = "none";
     }
 }
 
@@ -107,8 +107,28 @@ const crearComunas = () =>{
     }
 }
 
-
-const validarDeportes = () =>{
+let contFotos = 1;
+let contId = contFotos;
+const agregarFotos = () =>{
+    let id = "fotos-artesanias";
+    let labelFoto = document.getElementById("label-fotos");
+    let lastFoto = document.getElementById(id + contId.toString())
+    if(contFotos <= 2 && lastFoto.value != ""){
+        contId += 1;
+        contFotos += 1;
+        labelFoto.htmlFor = id + contId.toString();
+        let fotoSelect = document.getElementById("file-select");
+        let newFoto = document.createElement("input");
+        newFoto.className = "foto";
+        newFoto.type = "file";
+        newFoto.id = id + contId.toString();
+        newFoto.accept = "image/jpeg, image/png";
+        newFoto.autocomplete = "off";
+        fotoSelect.appendChild(newFoto);
+        newFoto.addEventListener("change",agregarFotos);
+    }
+}
+const validarArtesanias = () =>{
     let boxes = document.getElementsByClassName("checkbox");
     let n = 0;
     for(let i = 0; i<boxes.length; i++){
@@ -125,13 +145,19 @@ const validarRegion = () =>{
 const validarComuna = () =>{
     let region = document.getElementById("regiones");
     let comuna = document.getElementById("comunas");
-    let validarC = comuna.value !== "";
+    let validarC = comuna.value !== "default";
     validarC &= comunas[region.value].includes(comuna.value);
     return validarC;
 }
-const validarTrans = () => {
-    let transporte = document.getElementById("transporte");
-    return transporte.value !== "";
+const validarFotos = () =>{
+    let fotos = document.getElementsByClassName("foto");
+    let n = 0;
+    for(let i = 0; i<fotos.length; i++){
+        if(fotos[i].value != ""){
+            n++;
+        }
+    }
+    return n > 0 && n<4
 }
 const validarNombre = () =>{
     let nombre = document.getElementById("nombre");
@@ -143,16 +169,11 @@ const validarEmail = () =>{
 }
 const validarFono = () => {
     let fono = document.getElementById("fono");
-    return /(^[\+]569[0-9]{8})$|^([0-9]{8})$/.test(fono.value);
+    return (/(^[\+]569[0-9]{8})$|^([0-9]{8})$/.test(fono.value)|| fono.value == "");
 }
-
 const validarForm = () =>{
     let texto = ""
-    let validar = validarDeportes();
-    if(!validarDeportes()){
-        texto += "Seleccione entre 1 y 3 deportes.\n";
-    }
-    validar &&= validarRegion();
+    let validar = validarRegion();
     if(!validarRegion()){
         texto += "Seleccione una region.\n";
     }
@@ -160,9 +181,13 @@ const validarForm = () =>{
     if(!validarComuna()){
         texto+= "Seleccione una comuna.\n";
     }
-    validar &&= validarTrans();
-    if(!validarTrans()){
-        texto += "Seleccione un meido de transorte.\n";
+    validar &&= validarArtesanias();
+    if(!validarArtesanias()){
+        texto += "Seleccione entre 1 y 3 artesanias.\n";
+    }
+    validar &&= validarFotos();
+    if(!validarFotos()){
+        texto += "Seleccione entre 1 y 3 fotos.\n";
     }
     validar &&= validarNombre();
     if(!validarNombre()){
@@ -182,13 +207,16 @@ const validarForm = () =>{
     alert(texto);
 }
 
-agregarDeportes();
+agregarArtesania();
 
 let region = document.getElementById("regiones");
 region.addEventListener("change", crearComunas);
 
-let dropButton = document.getElementById("deportesBtn");
+let dropButton = document.getElementById("artesaniaBtn");
 dropButton.addEventListener("click",dropdown)
+
+let foto = document.getElementById("fotos-artesanias1");
+foto.addEventListener("change",agregarFotos)
 
 let logo = document.getElementById("logo-id");
 logo.addEventListener("click",entrarIndex);
