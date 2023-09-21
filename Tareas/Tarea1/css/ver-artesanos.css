@@ -1,0 +1,183 @@
+body {
+    text-align: center;
+    background-repeat: no-repeat;
+    background-image: url("../Imagenes/Background.png");    
+    background-position-x: center;
+    background-position-y: -50px;
+    object-fit: fill;
+    margin: 0;
+    width: 100%;
+    max-height: 100vh;
+    margin-left: auto;
+    z-index: 1;
+}
+
+.navbar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    font-family: "Fira Code", monospace;   
+    align-items: center;
+    background: linear-gradient(to bottom, #ffffffcc 0%, #ffffffcc 87%, #ffffff00 100%);
+    color: #0074ff;
+    margin: 0;
+    padding-top: 0.35em;
+    padding-bottom: 0.5em;
+    width: auto;
+
+}
+
+.detalles{
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    margin: 0 2em;
+    font-weight: 600;
+    font-size: 1rem;
+    padding-bottom: 0.4rem;
+}
+
+.detalles p{
+    margin: 0.1rem;
+    margin-top: 0.3rem;
+}
+
+.tareaNombre {
+    text-align: left;
+    border-left: 3px solid;
+    border-color: #fe4f3a;  
+    margin-right: auto;
+    padding-left: 1rem;
+}
+
+.tareaNombre h1{ 
+    color: #00cccc;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.tareaNombre p{ 
+    font-weight: 600;
+    margin-right: auto;
+    padding-bottom: 0.2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#logo-id {
+    width: 300px;
+    margin-left: 0.7rem;
+    margin-right: 1rem;
+    padding: .25rem;
+}
+
+
+.atributos .nombre {
+    border: 2px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 300px;
+    overflow: auto;
+}
+.atributos .telefono {
+    border: 2px solid black;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 100px;
+    overflow: auto;
+}
+.atributos .comuna {
+    border: 2px solid black;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 186px;
+    overflow: auto;
+}
+.atributos .tipo-artesanias {
+    border: 2px solid black;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 120px;
+    overflow: auto;
+}
+.atributos .fotos {
+    border: 2px solid black;
+    border-left: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+    width: 380px;
+}
+
+.artesano{
+    height: 130px;
+    display: flex;
+    justify-content: center;
+}
+
+.artesano .nombre {
+    border: 2px solid black;
+    border-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 300px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.artesano .telefono {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 100px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.artesano .comuna {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 186px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.artesano .tipo-artesanias {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 120px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.artesano .tipo-artesanias p{
+    margin: 5px;
+}
+.artesano .fotos {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+    width: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
