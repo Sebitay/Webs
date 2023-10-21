@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock %}</title>
+    {% block css %}{% endblock %}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <img
+        id="logo-id"
+        src="{{ url_for('static', filename='svg/anonymous.svg') }}"
+        alt="Logo de Confesiones 851"
+      />
+      <h1>Confesiones 851</h1>
+      <a class="navbar-page" href="{{ url_for('index') }}">Home</a>
+      <a class="navbar-page" href="#about">About</a>
+      <a class="navbar-page" href="#contact">Contact</a>
+      <div class="profile-dropdown">
+        <img onclick="openDropdown()" src="{{ profile_picture }}" class="dropbtn" />
+        <div id="profileDropdown" class="dropdown-content">
+          <a href="{{ url_for('profile') }}">Perfil</a>
+          <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <section class="main-container">
+    {% block content %}{% endblock %}
+    {% block javascript %}{% endblock %}
+    <script lang="js">
+      /* When the user clicks on the button,
+      toggle between hiding and showing the dropdown content */
+      const openDropdown = () => {
+        document.getElementById("profileDropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown menu if the user clicks outside of it
+      window.onclick = (event) => {
+        if (!event.target.matches('.dropbtn')) {
+          let dropdowns = document.getElementsByClassName("dropdown-content");
+          for (let i = 0; i < dropdowns.length; i++) {
+            let openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+    </script>
+  </section>
+</html>

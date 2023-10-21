@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link
+        rel = "stylesheet"
+        type = "text/css"
+        href = "{{ url_for('static', filename='css/index.css') }}"
+    />
+{% endblock %}
+
+{% block content %}
+    <div class = "someHeader"></div>
+    <div class = "buttons">
+        <div class = "agregar-hincha">
+            <a class = "button-5" href = "{{ url_for('agregar_hincha')}}"> 
+                Registrar Hincha
+            </a>
+            <div class = "gap"></div>
+        </div>
+        <div class = "agregar-artesano">
+            <a class = "button-5" href = "{{ url_for('agregar_artesano', text = 'None')}}">
+                Registrar Artesano
+            </a>
+            <div class = "gap"></div>
+        </div>
+        <div class = "ver-hinchas">
+            <a class = "button-5" href="{{ url_for('ver_hinchas')}}">
+                    Ver listado de hinchas
+            </a>
+            <div class = "gap"></div>
+        </div>
+        <div class = "ver-artesanos">
+            <a class = "button-5" href="{{ url_for('ver_artesanos',i = 1)}}">
+                    Ver listado de artesanos
+            </a>
+        </div>
+    </div>
+    <div class = "someFooter"></div>
+{% endblock %}
+
+{% block javascript %}
+
+{% endblock %}

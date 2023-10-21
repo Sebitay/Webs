@@ -1,0 +1,21 @@
+{% extends 'confesions/base.html' %}
+{% block css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/profile.css') }}"
+/>
+{% endblock %} {% block content %}
+<div class="card">
+  <img src="{{ profile_picture }}" alt="Imagen de {{ username }}" class="profile-picture" />
+  <h1 class="username">{{ username }}</h1>
+  <p class="email">{{ email }}</p>
+  <form action="{{ url_for('edit_img') }}" method="post" enctype="multipart/form-data" class="profile-form">
+    <label for="profile-img">
+      Cambiar foto de perfil
+    </label>
+    <input name="profile-img" type="file" accept="image/png, image/jpg, image/gif, image/jpeg">
+    <button>Guardar</button>
+  </form>
+</div>
+
+{% endblock %}

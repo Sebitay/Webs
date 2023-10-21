@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link
+    rel = "stylesheet"
+    type = "text/css"
+    href = "{{ url_for('static', filename='css/ver-artesanos.css') }}"
+    />
+{% endblock %}
+
+{% block content %}
+<div class = "atributos" style = "display: flex; justify-content: center;">
+    <div class = "nombre">
+        <p>Nombre</p>
+    </div>
+    <div class = "telefono">
+        <p>Telefono</p>
+    </div>
+    <div class = "comuna">
+        <p>Comuna</p>
+    </div>
+    <div class = "tipo-artesanias">
+        <p>Tipo Artesanías</p>
+    </div>
+    <div class = "fotos">
+        <p>Fotos</p>
+    </div>
+</div>
+<div id = "artesanos">
+    {% for artesano in artesanos %}
+    <a href="{{ url_for('informacion_artesano', id = artesano[0]) }}">
+        <div id = "{{ artesano[0] }}" class = 'artesano'>
+            <div class = 'nombre'>
+                <p>
+                    {% if artesano[3] %}
+                        {{ artesano[3] }}
+                    {% else %}
+                        No hay nombre
+                    {% endif %}
+                </p>
+            </div>
+            <div class = 'telefono'>
+                <p>
+                    {% if artesano[5] %}
+                        {{ artesano[5] }}
+                    {% else %}
+                        No hay telefono
+                    {% endif %}
+                </p>
+            </div>
+            <div class = 'comuna'>
+                <p>
+                    {% if artesano[6] %}
+                        {{ artesano[6] }}
+                    {% else %}
+                        No hay comuna
+                    {% endif %}
+                </p>
+            </div>
+            <div class = 'tipo-artesanias'>
+                {% for tipo in tipos[artesano[0]] %}
+                    <p>{{ tipo }}</p>
+                {% endfor %}
+            </div>
+            <div class = 'fotos'>
+                {% for foto in fotos[artesano[0]] %}
+                    <img src = "{{ url_for('static', filename = foto) }}" alt = "Foto de artesania" class = "foto">
+                {% endfor %}
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+<div id = "paginacion" style = "display: flex; justify-content: center;">
+    {% if i > 1 %}
+        <a id = "anterior" style = "margin: 10px; background-color: #e7e7e7; color: black; width: 100px; height: 15px; padding: 5px; border: 2px solid #000000; border-radius: 7px; font-size: 15px;" href = "{{ url_for('ver_artesanos', i = i - 1) }}">
+            Anterior
+        </a>
+    {% endif %}
+    {% if i < paginas %}
+        <a id = "siguiente" style = "margin: 10px; background-color: #e7e7e7; color: black; width: 100px; height: 15px; padding: 5px; border: 2px solid #000000; border-radius: 7px; font-size: 15px;" href = "{{ url_for('ver_artesanos', i = i + 1) }}">
+            Siguiente
+        </a>
+    {% endif %}
+</div>
+<div style = "display: flex; justify-content: center;">
+    <a id = "volver" style = "margin: 10px; background-color: #e7e7e7; color: black; width: 100px; height: 15px; padding: 5px; border: 2px solid #000000; border-radius: 7px; font-size: 15px;" href = "{{ url_for('index')}}">
+        Volver al index
+    </a>
+</div>
+{% endblock %}
+
+{% block javascript %}
+    <script src = "{{ url_for('static', filename='js/ver-artesanos.js') }}"></script>
+{% endblock %}

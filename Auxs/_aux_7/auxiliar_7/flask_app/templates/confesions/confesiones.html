@@ -1,0 +1,75 @@
+{% extends 'confesions/base.html' %}
+
+{% block css %}
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/confesiones.css') }}"
+    />
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/modal.css') }}"
+    />
+{% endblock %}
+
+{% block content %}    
+<!-- confesiones -->
+    <div class="conf-user">
+        <h1>Escribe tu confesion!!!</h1>
+        <form id="conf-form" action="{{url_for('post_conf')}}" method="post" enctype="multipart/form-data">
+            <label >
+                Título de la confesión
+                <input type="text" name="conf-title" id="conf-title">
+            </label>
+            <textarea name="conf-text" id="conf-text-area" cols="30" rows="10"></textarea>
+            <input type="file" name="conf-img" id="conf-img" accept="image/png, image/jpg, image/gif, image/jpeg" class="file-input">
+            <button type="button" id="submit-conf-btn">Enviar</button>
+        </form>
+        </div>
+    <div id="conf-list">
+        <div class="conf-search-bar">
+            <input class="search-input" id="search-input" type="text">
+            <img class="search-icon" id="search-icon" src="{{ url_for('static', filename='svg/search.svg') }}" alt="sus">
+        </div>
+        <div id="search-list" hidden>
+
+        </div>
+        {% if data %}
+            {% for conf in data%}
+            <div class="conf-container">
+                <div class="conf-header">
+                    <div class="author-profile">
+                        <img src="{{ conf.author_img }}" alt="Foto de perfil del autor" class="conf-profile-picture">
+                    </div>
+                    <div class="conf-header-text">
+                        <h2 class="title">{{ conf.title }}</h2>
+                        <p class="conf-author">{{ conf.author }}</p>
+                    </div>
+                </div>
+                <div class="conf-content">
+                    <p class="conf-text">{{conf.content}}</p>
+                    <img src="{{conf.path_image}}" alt="Placeholder Image" width="150" onclick="openModal(this)" class="conf-image">
+                </div>
+            </div>
+            {% endfor%}
+        {% endif %}
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+              <h2>Imagen mas grande</h2>
+            </div>
+            <div class="modal-body">
+              <img alt="imagen en 1280x1024" id="modal-img">
+            </div>
+          </div>
+    </div>
+</div>
+{% endblock content %}
+{% block javascript %}
+<script lang="javascript" src="{{ url_for('static', filename='js/jquery-3.5.1.min.js') }}"></script>
+<script lang="javascript" src="{{ url_for('static', filename='js/confesiones.js') }}"></script>
+<script lang="javascript" src="{{ url_for('static', filename='js/modal.js') }}"></script>
+<script lang="javascript" src="{{ url_for('static', filename='js/search-bar.js') }}"></script>
+
+{% endblock %}

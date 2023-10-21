@@ -1,0 +1,97 @@
+/* CONTAINER STUFF */
+.main-container {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.conf-user {
+    width: 30%;
+    max-height: 300px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    background: white;
+    border: .2em solid var(--black-color);
+    border-radius: .25em;
+    box-shadow: .2em .2em 0px 0px black;
+    margin: 0em 1em 2em 1em;
+    padding: 0.5em 1em 1em 1em;
+
+    
+}
+
+.conf-user > * {
+    width: 100%;
+}
+
+#conf-form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    background: white;
+}
+
+#conf-form > * {
+    width: 100%;
+}
+
+#conf-text-area {
+    background: white;
+    border: .2em solid var(--black-color);
+    border-radius: .25em;
+    outline: none;
+    resize: none;
+    margin-bottom: 1em;
+}
+
+
+#submit-conf-btn {
+    background-color: var(--pink-color);
+    text-align: center;
+    padding: .5em;
+    border: .2em solid var(--black-color);
+    box-shadow: .175em .175em 0px 0px black;
+    border-radius: .3em;
+    font-weight: 600;
+}
+
+#submit-conf-btn:hover {
+    background-color: #fb5685;
+    color: white;
+    transition: 0.2s ease;
+}
+
+#conf-list {
+    width: 70%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+.conf-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    background: white;
+    border: .2em solid var(--black-color);
+    border-radius: .25em;
+    box-shadow: .2em .2em 0px 0px black;
+    margin: 0em 1em 2em 0em;
+}
+
+.conf-author {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    padding: .1em;
+    border: .2em solid var(--black-color);
+    border-radius: .25em;
+    margin: .5em 1em;
+}
+
+.conf-author > * {
+    margin: 0 auto;
+}

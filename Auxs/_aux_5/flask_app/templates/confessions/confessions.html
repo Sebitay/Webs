@@ -1,0 +1,37 @@
+{% extends 'confessions/base.html' %}
+
+{% block css %}
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/confesiones.css') }}"
+    />
+{% endblock %}
+
+{% block content %}    
+<!-- confesiones -->
+    <div class="conf-user">
+        <h1>Escribe tu confesion!!!</h1>
+        <form id="conf-form" action="{{url_for('post_conf')}}" method="post" enctype="multipart/form-data">
+            <textarea name="conf-text" id="conf-text-area" cols="30" rows="10"></textarea>
+            <input type="file" name="conf-img" id="">
+            <button type="button" id="submit-conf-btn">Enviar</button>
+        </form>
+        </div>
+    <div id="conf-list">
+        {% if data %}
+            {% for conf in data%}
+            <div class="conf-container">
+                <div class="conf-author">
+                    <img src="{{conf.path_image}}" alt="Placeholder Image" width="150">
+                    <p>{{conf.author}}</p>
+                </div>
+                <p>{{conf.content}}</p>
+            </div>
+            {% endfor%}
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
+{% block javascript %}
+    <script lang="javascript" src="{{ url_for('static', filename='js/confesiones.js') }}"></script>
+{% endblock %}

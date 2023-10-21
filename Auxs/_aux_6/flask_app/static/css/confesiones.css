@@ -1,0 +1,154 @@
+/* CONTAINER STUFF */
+.main-container {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.conf-user {
+  width: 30%;
+  max-height: min-content;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  background: white;
+  border: 0.2em solid var(--black-color);
+  border-radius: 0.25em;
+  box-shadow: 0.2em 0.2em 0px 0px black;
+  margin: 0em 1em 2em 1em;
+  padding: 0.5em 1em 1em 1em;
+}
+
+.conf-user > * {
+  width: 100%;
+}
+
+#conf-form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  background: white;
+}
+
+#conf-form > * {
+  width: 100%;
+}
+
+#conf-text-area {
+  background: white;
+  border: 0.2em solid var(--black-color);
+  border-radius: 0.25em;
+  outline: none;
+  resize: none;
+  margin-bottom: 1em;
+}
+
+#submit-conf-btn {
+  background-color: var(--pink-color);
+  text-align: center;
+  padding: 0.5em;
+  border: 0.2em solid var(--black-color);
+  box-shadow: 0.175em 0.175em 0px 0px black;
+  border-radius: 0.3em;
+  font-weight: 600;
+}
+
+#submit-conf-btn:hover {
+  background-color: #fb5685;
+  color: white;
+  transition: 0.2s ease;
+}
+
+#conf-list {
+  width: 70%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.conf-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  padding: 0 1rem;
+  background: white;
+  border: 0.2em solid var(--black-color);
+  border-radius: 0.25em;
+  box-shadow: 0.2em 0.2em 0px 0px black;
+  margin: 0em 1em 2em 0em;
+}
+
+.conf-header {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 0.1em solid var(--black-color);
+  gap: 0.5rem;
+  padding: 1em 0;
+}
+
+.author-profile {
+    display: flex;
+    align-items: center;
+}
+
+.author-profile > img {
+    border-radius: 50%;
+    width: 80px;
+    border: .3em solid var(--black-color);
+}
+
+.conf-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-grow: 5;
+}
+
+.conf-header-text > * {
+    margin: 0;
+}
+
+.conf-header > * {
+  margin: 0;
+}
+
+.title {
+  margin-top: 1rem;
+}
+
+.conf-author {
+  margin-bottom: 1rem;
+  color: var(--pink-color);
+  font-weight: 600;
+}
+
+.conf-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.conf-text {
+  flex-grow: 5;
+}
+
+.conf-image {
+    cursor: pointer;
+}
+
+.file-input {
+  margin-bottom: 1em;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding-bottom: 1em;
+}
+
+label > input {
+  border: 0.2em solid var(--black-color);
+  border-radius: 0.25em;
+}

@@ -1,0 +1,132 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.atributos{
+    height: 54px;
+    background-color: #ffffffaa;
+}
+
+#artesanos{
+    background-color: #ffffffaa;
+}
+
+.atributos .nombre {
+    border: 2px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 300px;
+    overflow: auto;
+}
+.atributos .telefono {
+    border: 2px solid black;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 100px;
+    overflow: auto;
+}
+.atributos .comuna {
+    border: 2px solid black;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 186px;
+    overflow: auto;
+}
+.atributos .tipo-artesanias {
+    border: 2px solid black;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 120px;
+    overflow: auto;
+}
+.atributos .fotos {
+    border: 2px solid black;
+    border-left: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+    width: 380px;
+}
+
+.artesano{
+    height: 130px;
+    display: flex;
+    justify-content: center;
+}
+
+.foto{
+    width: 120px;
+    height: 120px;
+    margin: 2.5px;
+    border: 1px solid black;
+}
+
+.artesano .nombre {
+    border: 2px solid black;
+    border-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 300px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.artesano .telefono {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 100px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.artesano .comuna {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 186px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.artesano .tipo-artesanias {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 120px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.artesano .tipo-artesanias p{
+    margin: 5px;
+}
+.artesano .fotos {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+    width: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

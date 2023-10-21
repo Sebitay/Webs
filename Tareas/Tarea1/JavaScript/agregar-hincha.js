@@ -112,7 +112,6 @@ let key = ""
 const validarDeportes = () =>{
     let boxes = document.getElementsByClassName("checkbox");
     let n = 0;
-    info += "|";
     for(let i = 0; i<boxes.length; i++){
         if(boxes[i].checked){
             n++;
@@ -123,7 +122,7 @@ const validarDeportes = () =>{
 }
 const validarRegion = () =>{
     let region = document.getElementById("regiones");
-    info += "|" + region.value;
+    info +=region.value;
     return region.value !== "";
 }
 const validarComuna = () =>{
@@ -131,28 +130,28 @@ const validarComuna = () =>{
     let comuna = document.getElementById("comunas");
     let validarC = comuna.value !== "";
     validarC &= comunas[region.value].includes(comuna.value);
-    info += "|" + comuna.value;
+    info +=comuna.value;
     return validarC;
 }
 const validarTrans = () => {
     let transporte = document.getElementById("transporte");
-    info += "|" + transporte.value;
+    info +=transporte.value;
     return transporte.value !== "";
 }
 const validarNombre = () =>{
     let nombre = document.getElementById("nombre");
-    info += "|" + nombre.value;
+    info +=nombre.value;
     return nombre.value.length > 2 && nombre.value.length < 81;
 }
 const validarEmail = () =>{
     let Email = document.getElementById("email");
-    info += "|" + Email.value;
+    info +=Email.value;
     return /^[\w-\.]+@([\w-]+\.)+[\w-]+/.test(Email.value);
 }
 const validarFono = () => {
     let fono = document.getElementById("fono");
-    info += "|" + fono.value;
-    return /(^[\+]569[0-9]{8})$|^([0-9]{8})$/.test(fono.value);
+    info +=fono.value;
+    return /(^[\+]569[0-9]{8})$|^([0-9]{8})$/.test(fono.value)|| fono.value == "";
 }
 
 const validarForm = () =>{
@@ -165,42 +164,50 @@ const validarForm = () =>{
     info = key
     let texto = "";
     let validar = true;
+    info += "|";
     let validator = validarDeportes();
     validar &&= validator
     if(!validator){
         texto += "- Seleccione entre 1 y 3 deportes.\n";
     }
+    info += "|";
     validator = validarRegion();
     validar &&= validator;
     if(!validator){
         texto += "- Seleccione una region.\n";
     }
+    info += "|";
     validator = validarComuna();
     validar &&= validator
     if(!validator){
         texto+= "- Seleccione una comuna.\n";
     }
+    info += "|";
     validator = validarTrans();
     validar &&= validator
     if(!validator){
         texto += "- Seleccione un meido de transorte.\n";
     }
+    info += "|";
     validator = validarNombre();
     validar &&= validator
     if(!validator){
         texto += "- El nombre ingresado de tener entre 3 y 80 characteres.\n";
     }
+    info += "|";
     validator = validarEmail();
     validar &&= validator
     if(!validator){
         texto += "- Email invalido.\n";
     }
+    info += "|";
     validator = validarFono();
     validar &&= validator
     if(!validator){
         texto += "- Telefo invalido (debe de ser un telefono de 8 digitos con o sin +569).\n";
     }
     if(validar){
+        info += "|" + document.getElementById("comentario").value;
         let pass = document.getElementById("pass");
         pass.hidden = false
     }else{

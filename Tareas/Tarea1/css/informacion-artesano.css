@@ -1,0 +1,315 @@
+body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url("../Imagenes/Background.png");    
+    background-position-x: center;
+    background-position-y: -50px;
+    object-fit: fill;
+    margin: 0;
+    width: 100%;
+    max-height: 100vh;
+    margin-left: auto;
+    z-index: 1;
+}
+.navbar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    font-family: "Fira Code", monospace;   
+    align-items: center;
+    background: linear-gradient(to bottom, #ffffffcc 0%, #ffffffcc 87%, #ffffff00 100%);
+    color: #0074ff;
+    margin: 0;
+    padding-top: 0.35em;
+    padding-bottom: 0.5em;
+    width: auto;
+
+}
+.detalles{
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    margin: 0 2em;
+    font-weight: 600;
+    font-size: 1rem;
+    padding-bottom: 0.4rem;
+}
+.detalles p{
+    margin: 0.1rem;
+    margin-top: 0.3rem;
+}
+.tareaNombre {
+    text-align: left;
+    border-left: 3px solid;
+    border-color: #fe4f3a;  
+    margin-right: auto;
+    padding-left: 1rem;
+}
+.tareaNombre h1{ 
+    color: #00cccc;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.tareaNombre p{ 
+    font-weight: 600;
+    margin-right: auto;
+    padding-bottom: 0.2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#logo-id {
+    width: 300px;
+    margin-left: 0.7rem;
+    margin-right: 1rem;
+    padding: .25rem;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+
+}
+.info {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 700px;
+}
+
+/*Atributos*/
+.atributos{
+    width: 250px;
+    background-color: #ffffffaa;
+}
+.atributos .nombre {
+    border: 2px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 50px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.atributos .region {
+    border: 2px solid black;
+    border-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 50px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.atributos .comuna {
+    border: 2px solid black;
+    border-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 50px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.atributos .tipo-artesania {
+    border: 2px solid black;
+    border-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 50px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.atributos .email {
+    border: 2px solid black;
+    border-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 50px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.atributos .celular {
+    border: 2px solid black;
+    border-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 50px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.atributos .descripcion {
+    border: 2px solid black;
+    border-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 100px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.atributos .fotos {
+    border: 2px solid black;
+    border-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 50px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Artesanos*/
+#artesanos{
+    background-color: #ffffffaa;
+}
+
+.artesano{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+}
+
+.artesano .nombre {
+    border: 2px solid black;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+}
+.artesano .region {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+}
+.artesano .comuna {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+}
+.artesano .tipo-artesania {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+}
+.artesano .tipo-artesania p{
+    margin: 5px;
+}
+.artesano .email {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+}
+.artesano .celular {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+}
+.artesano .descripcion {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    align-items: center;
+}
+
+.fotos-head {
+    border: 2px solid black;
+    background-color: #ffffffaa;
+    border-top: 0px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    width: 646px;
+    height: 50px;
+}
+
+.foto {
+    margin: 3px;
+    border: 1px solid black;
+    width: 640px;
+    height: 480px;
+}
+
+#bigimg {
+    border: 1px solid black;
+    top: 1%;
+    width: 1280px;
+    height: 1024px;
+    z-index: 5;
+    overflow: auto;
+}
+#big {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 4;
+    background-color: #000000aa;
+}

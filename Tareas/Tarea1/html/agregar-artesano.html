@@ -25,22 +25,22 @@
                 <label for="regiones">Región donde vives:</label>
                 <select name="regiones" id="regiones" class = "select-inputs" autocomplete="off" required>
                     <option value="">Elige una región...</option>
-                    <option value="arica-y-parinacota">Región de Arica y Parinacota</option>
-                    <option value="tarapaca">Región de Tarapacá</option>
-                    <option value="antofagasta">Región de Antofagasta</option>
-                    <option value="atacama">Región de Atacama</option>
-                    <option value="coquimbo">Región de Coquimbo</option>
-                    <option value="valparaiso">Región de Valparaíso</option>
-                    <option value="metropolitana">Región Metropolitana</option>
-                    <option value="ohiggins">Región de O’Higgins</option>
-                    <option value="maule">Región del Maule</option>
-                    <option value="ñuble">Región del Ñuble</option>
-                    <option value="biobio">Región del Biobío</option>
-                    <option value="araucania">Región de La Araucanía</option>
-                    <option value="rios">Región de Los Ríos</option>
-                    <option value="lagos">Región de Los Lagos</option>
-                    <option value="aysen">Región de Aysén</option>
-                    <option value="magallanes">Región de Magallanes</option>
+                    <option value="Región de Arica y Parinacota">Región de Arica y Parinacota</option>
+                    <option value="Región de Tarapacá">Región de Tarapacá</option>
+                    <option value="Región de Antofagasta">Región de Antofagasta</option>
+                    <option value="Región de Atacama">Región de Atacama</option>
+                    <option value="Región de Coquimbo">Región de Coquimbo</option>
+                    <option value="Región de Valparaíso">Región de Valparaíso</option>
+                    <option value="Región Metropolitana">Región Metropolitana</option>
+                    <option value="Región de O’Higgins">Región de O’Higgins</option>
+                    <option value="Región del Maule">Región del Maule</option>
+                    <option value="Región del Ñuble">Región del Ñuble</option>
+                    <option value="Región del Biobío">Región del Biobío</option>
+                    <option value="Región de La Araucanía">Región de La Araucanía</option>
+                    <option value="Región de Los Ríos">Región de Los Ríos</option>
+                    <option value="Región de Los Lagos">Región de Los Lagos</option>
+                    <option value="Región de Aysén">Región de Aysén</option>
+                    <option value="Región de Magallanes">Región de Magallanes</option>
                 </select>
             </div>
 
@@ -71,7 +71,7 @@
 
             <div class = "descripcion-input">
                 <label for="descripcion">Describa sus artesanias:</label>
-                <textarea name="descripcion" id="descripcion" cols="50" rows="4" style = "resize: none; vertical-align: top;"></textarea>
+                <textarea name="descripcion" id="descripcion" cols="50" rows="4" style = "resize: none; vertical-align: top;" autocomplete="off"></textarea>
             </div>
 
             <div class = "nombre-input">
@@ -93,8 +93,25 @@
                 <button type="button" id = "register">Registrarse</button>
             </div>
         </form>
-        <div class = "texto">
-            <h1 id = "validar"></h1>
+        <div class = "boxes">
+            <div id = "fail" class = "box" hidden>
+                <h1>Su información contiene errores...</h1>
+                <div class = "texto">
+                    <p id = "par"></p>
+                </div>
+                <button type="button" id = "ok-fail">Ok</button>
+            </div>
+            <div id = "pass" class = "box" hidden>
+                <h1>¿Confirma el registro de este artesano?</h1>
+                <div class = "pass-buttons">
+                    <button type="button" id="ok-pass">Si, confirmo.</button>
+                    <button type="button" id="not-ok-pass">No, quiero volver al formulario</button>
+                </div>
+            </div>
+            <div id = "finish" class = "box" hidden>
+                <h1>Hemos recibido el registro de Artesano. Muchas gracias.</h1>
+                <button type="button" id="finish-button">Volver al index</button>
+            </div>
         </div>
     </div>
     <script lang="en" src="../JavaScript/agregar-artesano.js"></script>

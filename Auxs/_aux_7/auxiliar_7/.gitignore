@@ -1,0 +1,17 @@
+.DS_Store
+
+venv/
+
+*.pyc
+flask_app/__pycache__/
+
+flask_app/instance/
+
+flask_app/.pytest_cache/
+flask_app/.coverage
+flask_app/htmlcov/
+
+flask_app/dist/
+flask_app/build/
+*.egg-info/
+flask_app/static/uploads

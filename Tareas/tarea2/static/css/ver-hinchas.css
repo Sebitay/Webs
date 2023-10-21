@@ -1,0 +1,128 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.atributos{
+    height: 54px;
+    background-color: #ffffffaa;
+}
+
+#hinchas{
+    background-color: #ffffffaa;
+}
+
+.atributos .nombre {
+    border: 2px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 300px;
+    overflow: auto;
+}
+
+.atributos .comuna {
+    border: 2px solid black;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 186px;
+    overflow: auto;
+}
+
+.atributos .deportes {
+    border: 2px solid black;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 150px;
+    overflow: auto;
+}
+.atributos .modo-transporte {
+    border: 2px solid black;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 120px;
+    overflow: auto;
+}
+.atributos .celular {
+    border: 2px solid black;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 130px;
+    overflow: auto;
+}
+
+.hincha{
+    height: 130px;
+    display: flex;
+    justify-content: center;
+}
+
+.hincha .nombre {
+    border: 2px solid black;
+    border-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 300px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hincha .comuna {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 186px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hincha .deportes {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 150px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hincha .deportes p{
+    margin: 5px;
+}
+.hincha .modo-transporte {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 120px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hincha .celular {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 130px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
