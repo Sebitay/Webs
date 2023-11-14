@@ -27,7 +27,66 @@
         </div>
     </div>
     <div id = "hinchas">
-    </div> 
+        {% for hincha in hinchas %}
+        <a href = "{{ url_for('informacion_hincha', id = hincha[0]) }}">    
+            <div id = "{{ hincha[0] }}" class = 'hincha'>
+                <div class = 'nombre'>
+                    <p>
+                        {% if hincha[1] %}
+                            {{ hincha[1] }}
+                        {% else %}
+                            No hay nombre
+                        {% endif %}
+                    </p>
+                </div>
+                <div class = 'comuna'>
+                    <p>
+                        {% if hincha[2] %}
+                            {{ hincha[2] }}
+                        {% else %}
+                            No hay comuna
+                        {% endif %}
+                    </p>
+                </div>
+                <div class = 'deportes'>
+                    {% for deporte in deportes[hincha[0]] %}
+                    <p>{{ deporte }}</p>
+                    {% endfor %}
+                </div>
+                <div class = 'modo-transporte'>
+                    <p>
+                        {% if hincha[3] %}
+                            {{ hincha[3] }}
+                        {% else %}
+                            No hay modo de transporte
+                        {% endif %}
+                    </p>
+                </div>
+                <div class = 'celular'>
+                    <p>
+                        {% if hincha[4] %}
+                            {{ hincha[4] }}
+                        {% else %}
+                            No hay celular
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    <div id = "paginacion" style = "display: flex; justify-content: center;">
+        {% if i > 1 %}
+            <a id = "anterior" style = "margin: 10px; background-color: #e7e7e7; color: black; width: 100px; height: 15px; padding: 5px; border: 2px solid #000000; border-radius: 7px; font-size: 15px;" href = "{{ url_for('ver_hinchas', i = i - 1) }}">
+                Anterior
+            </a>
+        {% endif %}
+        {% if i < paginas %}
+            <a id = "siguiente" style = "margin: 10px; background-color: #e7e7e7; color: black; width: 100px; height: 15px; padding: 5px; border: 2px solid #000000; border-radius: 7px; font-size: 15px;" href = "{{ url_for('ver_hinchas', i = i + 1) }}">
+                Siguiente
+            </a>
+        {% endif %}
+    </div>
     <div style = "display: flex; justify-content: center;">
         <a id = "volver" style = "margin: 10px; background-color: #e7e7e7; color: black; width: 100px; height: 15px; padding: 5px; border: 2px solid #000000; border-radius: 7px; font-size: 15px;" href = "{{ url_for('index')}}">
             Volver al index

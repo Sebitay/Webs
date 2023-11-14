@@ -38,6 +38,30 @@ def getComunas(region):
   comunas = cursor.fetchall()
   return comunas
 
+def idRegion(region):
+    conn = getConn()
+    cursor = conn.cursor()
+    cursor.execute("""
+                  SELECT id
+                  FROM region
+                  WHERE nombre = %s;
+                  """, (region))
+    id = cursor.fetchone()
+    return id[0]
+
+def idComuna(comuna, regionId):
+    conn = getConn()
+    cursor = conn.cursor()
+    cursor.execute("""
+                  SELECT id
+                  FROM comuna
+                  WHERE nombre = %s
+                  AND region_id = %s;
+                  """, (comuna,regionId))
+    id = cursor.fetchone()
+    return id[0]
+
+# Getters artesanos
 def getArtesanias():
   conn = getConn()
   cursor = conn.cursor()
@@ -86,7 +110,6 @@ def getArtesano(id):
     artesano = cursor.fetchone()
     return artesano
    
-
 def getFotos(id):
     conn = getConn()
     cursor = conn.cursor()
@@ -101,13 +124,6 @@ def getFotos(id):
         ret.append("up/"+foto[0])
     return ret
 
-def getDeportes():
-  conn = getConn()
-  cursor = conn.cursor()
-  cursor.execute("SELECT nombre FROM deporte;")
-  deportes = cursor.fetchall()
-  return deportes
-
 def count():
     conn = getConn()
     cursor = conn.cursor()
@@ -119,6 +135,52 @@ def count():
 
 def idArtesano():
     return count()+1
+
+def idTipo(tipo):
+    conn = getConn()
+    cursor = conn.cursor()
+    cursor.execute("""
+                  SELECT id
+                  FROM tipo_artesania
+                  WHERE nombre = %s;
+                  """, (tipo))
+    id = cursor.fetchone()
+    return id[0]
+
+#Getters hinchas
+def getHinchas(i,n):
+    conn = getConn()
+    cursor = conn.cursor()
+    cursor.execute("""
+                     SELECT H.id, H.nombre, C.nombre, H.modo_transporte, H.celular, 
+                     FROM hincha H, comuna C
+                     WHERE H.comuna_id = C.id
+                     ORDER BY id DESC LIMIT %s OFFSET %s;
+                     """,(n,(i-1)*n))
+    hinchas = cursor.fetchall()
+    return hinchas
+
+def Deportes(id):
+    conn = getConn()
+    cursor = conn.cursor()
+    cursor.execute("""
+                     SELECT D.nombre
+                     FROM hincha_deporte HD, deporte D
+                     WHERE HD.hincha_id = %s
+                     AND HD.deporte_id = D.id;
+                     """,(id))
+    deportes = cursor.fetchall()
+    ret = []
+    for deporte in deportes:
+        ret.append(deporte[0])
+    return ret
+
+def getDeportes():
+  conn = getConn()
+  cursor = conn.cursor()
+  cursor.execute("SELECT nombre FROM deporte;")
+  deportes = cursor.fetchall()
+  return deportes
 
 def countHincha():
     conn = getConn()
@@ -141,41 +203,6 @@ def idDeporte(deporte):
                    """, (deporte))
     id = cursor.fetchone()
     return id[0]
-
-def idRegion(region):
-    conn = getConn()
-    cursor = conn.cursor()
-    cursor.execute("""
-                  SELECT id
-                  FROM region
-                  WHERE nombre = %s;
-                  """, (region))
-    id = cursor.fetchone()
-    return id[0]
-
-def idComuna(comuna, regionId):
-    conn = getConn()
-    cursor = conn.cursor()
-    cursor.execute("""
-                  SELECT id
-                  FROM comuna
-                  WHERE nombre = %s
-                  AND region_id = %s;
-                  """, (comuna,regionId))
-    id = cursor.fetchone()
-    return id[0]
-
-def idTipo(tipo):
-    conn = getConn()
-    cursor = conn.cursor()
-    cursor.execute("""
-                  SELECT id
-                  FROM tipo_artesania
-                  WHERE nombre = %s;
-                  """, (tipo))
-    id = cursor.fetchone()
-    return id[0]
-
 
 # validar datos
 def validarRegion(region):

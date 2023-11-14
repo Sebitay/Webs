@@ -42,10 +42,6 @@ def agregar_hincha(text):
         else:
             return render_template('hincha/agregar-hincha.html', text = text)
 
-@app.route('/ver_hinchas')
-def ver_hinchas():
-    return render_template('hincha/ver-hinchas.html')
-
 @app.route('/agregar_artesano/<text>', methods=['GET', 'POST'])
 def agregar_artesano(text):
     if request.method == 'POST':
@@ -94,6 +90,17 @@ def agregar_artesano(text):
             return render_template('artesano/agregar-artesano.html')
         else:
             return render_template('artesano/agregar-artesano.html', text = text)
+        
+@app.route('/ver_hinchas/<i>', methods=['GET', 'POST'])
+def ver_hinchas(i):
+    if request.method == 'GET':
+        total = db.countHincha()
+        hinchas = db.getHinchas(int(i),5)
+        deportes = {}
+        for hincha in hinchas:
+            deportes[hincha[0]] = db.Deportes(hincha[0])
+        return render_template('hincha/ver-hinchas.html', hinchas = hinchas, deportes = deportes, paginas = total/5, i=int(i))
+
 
 @app.route('/ver_artesanos/<i>', methods=['GET', 'POST'])
 def ver_artesanos(i):
@@ -106,7 +113,6 @@ def ver_artesanos(i):
         fotos = {}
         for artesano in artesanos:
             fotos[artesano[0]] = db.getFotos(artesano[0])
-        print(fotos)
         return render_template('artesano/ver-artesanos.html', artesanos = artesanos, tipos = tipos, fotos = fotos, paginas = total/5, i=int(i))
     
 @app.route('/informacion_artesano/<id>', methods=['GET', 'POST'])
@@ -115,8 +121,12 @@ def informacion_artesano(id):
         artesano = db.getArtesano(id)
         tipos = db.getTipos(id)
         fotos = db.getFotos(id)
-        print(artesano, tipos, fotos)
         return render_template('artesano/informacion-artesano.html', artesano = artesano, tipos = tipos, fotos = fotos)
+
+
+@app.route('/informacion_hincha/<id>', methods=['GET', 'POST'])
+def informacion_hincha(id):
+    return render_template('hincha/informacion-hincha.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
