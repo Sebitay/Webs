@@ -16,7 +16,7 @@
         <p id = "errores"></p>
     </div>
     <div class="container" id = "body">
-        <form class="formulario">
+        <form class="formulario" id="form" action = "{{ url_for('agregar_hincha', text = 'None')}}" method = 'POST' enctype="multipart/form-data">
             <div class = "deportes-input" id = "deportes-input" style = "display: flex; justify-content: center;" >
                 <label for="deportesBtn" id = "deportesLabel">Que deportes te interesan: </label>
                 <div>
@@ -38,7 +38,7 @@
                     <option value="Región de Atacama">Región de Atacama</option>
                     <option value="Región de Coquimbo">Región de Coquimbo</option>
                     <option value="Región de Valparaíso">Región de Valparaíso</option>
-                    <option value="Región Metropolitana de Santiago">Región Metropolitana</option>
+                    <option value="Región Metropolitana de Santiago">Región Metropolitana de Santiago</option>
                     <option value="Región del Libertador Bernardo Ohiggins">Región del Libertador Bernardo Ohiggins</option>
                     <option value="Región del Maule">Región del Maule</option>
                     <option value="Región del Ñuble">Región del Ñuble</option>
@@ -60,25 +60,25 @@
                 <label for="transporte">Modo de transporte: </label>
                 <select name="transporte" id="transporte" class = "select-inputs" autocomplete="off" required>
                     <option value="">Elige un modo de transporte...</option>
-                    <option value="Particular">Particular</option>
-                    <option value="Locomoción colectiva">Locomoción colectiva</option>
+                    <option value="particular">Particular</option>
+                    <option value="locomoción pública">Locomoción colectiva</option>
                 </select>
             </div>
             <div class = "nombre-input">
                 <label for="nombre">Nombre: </label>
-                <input type="text" id = "nombre" class = "text-inputs" autocomplete="off" size = "80" required>
+                <input type="text" name = "nombre"id = "nombre" class = "text-inputs" autocomplete="off" size = "80" required>
             </div>
             <div class = "email-input">
                 <label for="email">Email de contacto: </label>
-                <input type="text" id = "email" class = "text-inputs" autocomplete="off" size = "30" required>
+                <input type="text" name = "email" id = "email" class = "text-inputs" autocomplete="off" size = "30" required>
             </div>
             <div class = "fono-input">
                 <label for="fono">Telefono de contacto: </label>
-                <input type="text" id = "fono" class = "text-inputs" autocomplete="off" size = "15">
+                <input type="text" name = "fono" id = "fono" class = "text-inputs" autocomplete="off" size = "15">
             </div>
             <div class = "comentario-input">
                 <label for="comentario">Comentarios adicionales: </label>
-                <input type = "text" id="comentario" class = "text-inputs" autocomplete="off" size = "80">
+                <input type = "text" name = "comentario" id="comentario" class = "text-inputs" autocomplete="off" size = "80">
             </div>
             <div class = "registBtn">
                 <button type="button" id = "register">Registrarse</button>
@@ -95,15 +95,9 @@
             <div id = "pass" class = "box" hidden>
                 <h1>¿Confirma el registro de este hincha?</h1>
                 <div class = "pass-buttons">
-                    <button type="button" id="ok-pass">Si, confirmo.</button>
-                    <button type="button" id="not-ok-pass">No, quiero volver al formulario</button>
+                    <button type="button" id="confirm">Si, confirmo.</button>
+                    <button type="button" id="cancel">No, quiero volver al formulario</button>
                 </div>
-            </div>
-            <div id = "finish" class = "box" hidden>
-                <h1>Hemos recibido el registro de Hincha. Muchas gracias.</h1>
-                <a id="finish-button" href="{{ url_for('index') }}">
-                    Volver al index
-                </a>
             </div>
         </div>
     </div>

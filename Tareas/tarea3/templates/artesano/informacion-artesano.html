@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+    <link
+    rel = "stylesheet"
+    type = "text/css"
+    href = "{{ url_for('static', filename='css/informacion-artesano.css') }}"
+    />
+{% endblock %}
+
+{% block content %}
+<div class = "info">
+    <div class = "atributos" style = "display: flex; justify-content: center; flex-direction: column;">
+        <div class = "nombre">
+            <p>Nombre</p>
+        </div>
+        <div class = "region">
+            <p>Región</p>
+        </div>
+        <div class = "comuna">
+            <p>Comuna</p>
+        </div>
+        <div class = "email">
+            <p>Email</p>
+        </div>
+        <div class = "celular">
+            <p>Numero Celular</p>
+        </div>
+        <div class = "tipo-artesania">
+            <p>Tipo de Artesania</p>
+        </div>
+        <div class = "descripcion">
+            <p>Descripcion de la Artesania</p>
+        </div>
+    </div>
+    <div id = "artesanos">
+        <div id = {{artesano[0]}} class = "artesano">
+            <div class = "nombre">
+                <p>{{artesano[3]}}</p>
+            </div>
+            <div class = "region">
+                <p>{{artesano[7]}}</p>
+            </div>
+            <div class = "comuna">
+                <p>{{artesano[6]}}</p>
+            </div>
+            <div class = "email">
+                <p>{{artesano[4]}}</p>
+            </div>
+            <div class = "celular">
+                <p>{{artesano[5]}}</p>
+            </div>
+            <div class = "tipo-artesania">
+                {% for tipo in tipos %}
+                    <p>{{tipo}}</p>
+                {% endfor %}
+            </div>
+            <div class = "descripcion">
+                <p>{{artesano[2]}}</p>
+            </div>
+        </div>
+    </div> 
+    <div class = "fotos-head">
+        <p>Fotos</p>
+    </div>
+</div>
+<div id = "fotos" style = "display: flex; justify-content: center; flex-direction: column;">
+    {% for foto in fotos %}
+        <img src = "{{ url_for('static', filename = foto) }}" alt = "Foto" class = "foto">
+    {% endfor %}
+</div>
+<div style = "display: flex; justify-content: center;">
+    <a id = "volver" style =  "margin: 10px; background-color: #e7e7e7; color: black; width: 120px; height: 30px; padding: 5px; border: 2px solid #000000; border-radius: 7px; font-size: 15px;" href = "{{ url_for('ver_artesanos',i = 1)}}">
+        Volver al Listado de Artesanos
+    </a>
+</div>
+<div id = "big" onclick = "this.hidden = true;" hidden>
+    <img id = "bigimg" src="none" alt="Foto">
+</div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ url_for('static', filename='js/informacion-artesano.js') }}"></script>
+{% endblock %}

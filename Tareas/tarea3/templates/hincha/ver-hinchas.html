@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link
+        rel="stylesheet"
+        type = "text/css"
+        href="{{ url_for('static', filename='css/ver-hinchas.css') }}"
+    />
+{% endblock %}
+
+{% block content %}
+    <div class = "atributos" style = "display: flex; justify-content: center;">
+        <div class = "nombre">
+            <p>Nombre</p>
+        </div>
+        <div class = "comuna">
+            <p>Comuna</p>
+        </div>
+        <div class = "deportes">
+            <p>Deportes</p>
+        </div>
+        <div class = "modo-transporte">
+            <p>Modo Transporte</p>
+        </div>
+        <div class = "celular">
+            <p>Numero Celular</p>
+        </div>
+    </div>
+    <div id = "hinchas">
+    </div> 
+    <div style = "display: flex; justify-content: center;">
+        <a id = "volver" style = "margin: 10px; background-color: #e7e7e7; color: black; width: 100px; height: 15px; padding: 5px; border: 2px solid #000000; border-radius: 7px; font-size: 15px;" href = "{{ url_for('index')}}">
+            Volver al index
+        </a>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ url_for('static', filename='js/ver-hinchas.js') }}"></script>
+{% endblock %}

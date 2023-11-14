@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link
+    rel = "stylesheet"
+    type = "text/css"
+    href = "{{ url_for('static', filename='css/agregar-artesano.css') }}"
+    />
+{% endblock %}
+
+{% block content %}
+    <div id = "text" class = "Header" style = "margin-bottom: 20px;">
+        {% if text != 'None' %}
+            <p>{{ text }}</p>
+        {% endif %}
+        <p id = "errores"></p>
+    </div>
+<form class="formulario" id="form" action = "{{ url_for('agregar_artesano', text = 'None')}}" method = 'POST' enctype="multipart/form-data">
+    <div class="region-input">
+        <label for="regiones">Región donde vives:</label>
+        <select name="regiones" id="regiones" class = "select-inputs" autocomplete="off" required>
+            <option value="">Elige una región...</option>
+            <option value="Región Arica y Parinacota">Región Arica y Parinacota</option>
+            <option value="Región de Tarapacá">Región de Tarapacá</option>
+            <option value="Región de Antofagasta">Región de Antofagasta</option>
+            <option value="Región de Atacama">Región de Atacama</option>
+            <option value="Región de Coquimbo">Región de Coquimbo</option>
+            <option value="Región de Valparaíso">Región de Valparaíso</option>
+            <option value="Región Metropolitana de Santiago">Región Metropolitana de Santiago</option>
+            <option value="Región del Libertador Bernardo Ohiggins">Región del Libertador Bernardo Ohiggins</option>
+            <option value="Región del Maule">Región del Maule</option>
+            <option value="Región del Ñuble">Región del Ñuble</option>
+            <option value="Región del Biobío">Región del Biobío</option>
+            <option value="Región de La Araucanía">Región de La Araucanía</option>
+            <option value="Región de Los Ríos">Región de Los Ríos</option>
+            <option value="Región de Los Lagos">Región de Los Lagos</option>
+            <option value="Región Aisén del General Carlos Ibáñez del Campo">Región Aisén del General Carlos Ibáñez del Campo</option>
+            <option value="Región de Magallanes y la Antártica Chilena">Región de Magallanes y la Antártica Chilena</option>
+        </select>
+    </div>
+
+    <div class = "comuna-input">
+        <label for="comunas">Comuna donde vives:</label>
+        <select name="comunas" id="comunas" class = "select-inputs" required>
+            <option value="">Elige una región primero</option> 
+        </select>
+    </div>
+
+    <div class = "artesania-input" id = "artesania-input" style = "display: flex; justify-content: center;" >
+        <label for="artesaniaBtn" id = "artesaniaLabel">Que tipo de artesanias vende:</label>
+        <div style = "margin-left: 4px;">
+            <button class = "select-inputs" type = "button" id = "artesaniaBtn">Elige tus artesanias...</button>
+            <div class = "bordeDrop" id = "bordeDrop" style = "display: none;">
+                <div class = "dropdown-artesanias" id = "dropdown-artesanias">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class = "fotos-input" style = "display:flex; justify-content: center;">
+        <label id = "label-fotos" for="fotos-artesanias1">Ingrese las fotos de sus artesanias:</label>
+        <div id = "file-select" style = "display:flex; flex-direction: column; margin-left: 4px;">
+            <input type="file" name = 'fotos' class = "foto" id="fotos-artesanias1" accept = "image/jpeg, image/png">
+        </div>
+    </div>
+
+    <div class = "descripcion-input">
+        <label for="descripcion">Describa sus artesanias:</label>
+        <textarea name="descripcion" id="descripcion" cols="50" rows="4" style = "resize: none; vertical-align: top;" autocomplete="off"></textarea>
+    </div>
+
+    <div class = "nombre-input">
+        <label for="nombre">Nombre: </label>
+        <input type="text" name = 'nombre' id = "nombre" class = "text-inputs" autocomplete="off" size = "80" required>
+    </div>
+
+    <div class = "email-input">
+        <label for="email">Email de contacto: </label>
+        <input type="text" name = 'email' id = "email" class = "text-inputs" autocomplete="off" size = "30" required>
+    </div>
+
+    <div class = "fono-input">
+        <label for="fono">Telefono de contacto: </label>
+        <input type="text" name = 'fono' id = "fono" class = "text-inputs" autocomplete="off" size = "15">
+    </div>
+
+    <div class = "registBtn">
+        <button type="button" id = "register">Registrarse</button>
+    </div>
+</form>
+<div class = "boxes">
+    <div id = "fail" class = "box" hidden>
+        <h1>Su información contiene errores...</h1>
+        <div class = "texto">
+            <p id = "par"></p>
+        </div>
+        <button type="button" id = "ok-fail">Ok</button>
+    </div>
+    <div id = "pass" class = "box" hidden>
+        <h1>¿Confirma el registro de este artesano?</h1>
+        <div class = "pass-buttons">
+            <button type="button" id="confirm">Si, confirmo.</button>
+            <button type="button" id="cancel">No, quiero volver al formulario</button>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+    <script src= "{{ url_for('static', filename='js/agregar-artesano.js') }}"></script>
+{% endblock %}
