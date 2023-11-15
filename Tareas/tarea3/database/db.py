@@ -148,11 +148,24 @@ def idTipo(tipo):
     return id[0]
 
 #Getters hinchas
+def getFullHincha(id):
+    conn = getConn()
+    cursor = conn.cursor()
+    cursor.execute("""
+                    SELECT H.nombre, R.nombre, C.nombre, modo_transporte, H.email, H.celular, H.comentarios
+                   FROM hincha H, comuna C, region R
+                   WHERE H.comuna_id = C.id
+                   AND C.region_id = R.id
+                   AND H.id = %s;
+                   """,(id))
+    hincha = cursor.fetchone()
+    return hincha
+
 def getHinchas(i,n):
     conn = getConn()
     cursor = conn.cursor()
     cursor.execute("""
-                     SELECT H.id, H.nombre, C.nombre, H.modo_transporte, H.celular, 
+                     SELECT H.id, H.nombre, C.nombre, H.modo_transporte, H.celular
                      FROM hincha H, comuna C
                      WHERE H.comuna_id = C.id
                      ORDER BY id DESC LIMIT %s OFFSET %s;

@@ -126,7 +126,15 @@ def informacion_artesano(id):
 
 @app.route('/informacion_hincha/<id>', methods=['GET', 'POST'])
 def informacion_hincha(id):
-    return render_template('hincha/informacion-hincha.html')
+    if request.method == 'GET':
+        hincha = db.getFullHincha(id)
+        deportes = db.Deportes(id)
+        return render_template('hincha/informacion-hincha.html', id = id, hincha = hincha, deportes = deportes)
+
+@app.route('/estadisticas', methods=['GET', 'POST'])
+def estadisticas():
+    if request.method == 'GET':
+        return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

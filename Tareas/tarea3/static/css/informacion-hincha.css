@@ -1,0 +1,225 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+
+}
+.info {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 700px;
+}
+
+/*Atributos*/
+.atributos{
+    width: 250px;
+    background-color: #ffffffaa;
+}
+.atributos .nombre {
+    border: 2px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 50px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.atributos .region {
+    border: 2px solid black;
+    border-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 50px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.atributos .comuna {
+    border: 2px solid black;
+    border-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 50px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.atributos .deportes {
+    border: 2px solid black;
+    border-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 100px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.atributos .modo-transporte {
+    border: 2px solid black;
+    border-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+}
+.atributos .email {
+    border: 2px solid black;
+    border-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 50px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.atributos .celular {
+    border: 2px solid black;
+    border-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 50px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.atributos .comentario {
+    border: 2px solid black;
+    border-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 100px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Hincha*/
+#hinchas{
+    background-color: #ffffffaa;
+}
+
+.hincha{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+}
+
+.hincha .nombre {
+    border: 2px solid black;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+}
+.hincha .region {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+}
+
+.hincha .comuna {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+}
+.hincha .deportes {
+    flex-direction: column;
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    align-items: center;
+}
+.hincha .deportes p{
+    margin: 5px;
+}
+.hincha .modo-transporte {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+}
+.hincha .email {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+}
+.hincha .celular {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+}
+.hincha .comentario {
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    align-items: center;
+}
