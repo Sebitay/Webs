@@ -1,4 +1,5 @@
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template, redirect, url_for, jsonify
+from flask_cors import cross_origin
 from werkzeug.utils import secure_filename
 from database import db
 import filetype
@@ -131,10 +132,27 @@ def informacion_hincha(id):
         deportes = db.Deportes(id)
         return render_template('hincha/informacion-hincha.html', id = id, hincha = hincha, deportes = deportes)
 
-@app.route('/estadisticas', methods=['GET', 'POST'])
+@app.route('/estadisticas', methods=['GET'])
 def estadisticas():
-    if request.method == 'GET':
-        return render_template('index.html')
+    return render_template('estadisticas.html')
+    
+@app.route('/get-data-artesanos', methods=['GET'])
+@cross_origin(origin="localhost", supports_credentials=True)
+def get_data():
+    rawArtesanos = db.getStatsArtesanos()
+    dataArtesanos = []
+    for item in rawArtesanos:
+        dataArtesanos.append({'tipo':item[0], 'cantidad':item[1]})
+    return jsonify(dataArtesanos)
+
+@app.route('/get-data-hinchas', methods=['GET'])
+@cross_origin(origin="localhost", supports_credentials=True)
+def get_data_hinchas():
+    rawHinchas = db.getStatsHinchas()
+    dataHinchas = []
+    for item in rawHinchas:
+        dataHinchas.append({'deporte':item[0], 'cantidad':item[1]})
+    return jsonify(dataHinchas)
 
 if __name__ == "__main__":
     app.run(debug=True)

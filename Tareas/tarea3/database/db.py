@@ -217,6 +217,33 @@ def idDeporte(deporte):
     id = cursor.fetchone()
     return id[0]
 
+#Getters stats
+def getStatsArtesanos():
+    conn = getConn()
+    cursor = conn.cursor()
+    cursor.execute("""
+                    SELECT nombre, COUNT(DISTINCT artesano_id) as n_artesanos
+                    FROM artesano_tipo
+                    LEFT JOIN tipo_artesania ON tipo_artesania_id = id
+                    GROUP BY nombre
+                    ORDER BY nombre;
+                     """)
+    stats = cursor.fetchall()
+    return stats
+
+def getStatsHinchas():
+    conn = getConn()
+    cursor = conn.cursor()
+    cursor.execute("""
+                    SELECT nombre, COUNT(DISTINCT hincha_id) as n_hinchas
+                    FROM deporte
+                    LEFT JOIN hincha_deporte ON deporte_id = id
+                    GROUP BY nombre
+                    ORDER BY n_hinchas;
+                     """)
+    stats = cursor.fetchall()
+    return stats
+
 # validar datos
 def validarRegion(region):
     for reg in getRegiones():

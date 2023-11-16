@@ -1,0 +1,11 @@
+.stats-container {
+    padding: 1rem;
+    background: white;
+    border: 0.2em solid var(--black-color);
+    border-radius: 0.25em;
+    box-shadow: 0.2em 0.2em 0px 0px black;
+    margin: 0 auto;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+
+}

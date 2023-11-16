@@ -1,0 +1,151 @@
+:root {
+  --black-color: #000022;
+  --background-color: #E8E6F0;
+  --pink-color: #FC2865;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-color);
+  font-family: "Roboto", sans-serif;
+}
+
+/* NAV BAR STUFF */
+
+.navbar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: center;
+  background: white;
+  border: .2em solid var(--black-color);
+  border-radius: .25em;
+  margin: 1em 1em 2em 1em;
+  box-shadow: .3em .3em 0px 0px black;
+}
+
+.navbar > * {
+  color: var(--black-color);
+  font-family: "Roboto", sans-serif;
+}
+
+#logo-id {
+  margin: 0 auto;
+  width: 2%;
+  padding: .5em;
+  border: .2em solid var(--black-color);
+  margin: .1em .25em .1em 1.5em;
+  box-shadow: .15em .15em 0px 0px black;
+  border-radius: .25em;
+}
+
+.navbar h1 {
+  font-family: "Fira Code", monospace;
+  margin: .5em;
+  margin-right: auto;
+}
+
+.navbar a {
+  position: relative;
+  text-decoration: none;
+  margin: 0 2em;
+  padding: .25em;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+#logout-btn {
+  background-color: var(--pink-color);
+  width: 5%;
+  text-align: center;
+  padding: .5em;
+  border: .2em solid var(--black-color);
+  box-shadow: .175em .175em 0px 0px black;
+  border-radius: .3em;
+}
+
+#logout-btn:hover {
+  background-color: #fb5685;
+  color: white;
+  transition: 0.2s ease;
+}
+
+
+.navbar-page::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.175em;
+  background: var(--black-color);
+  left: 0;
+  bottom: 0;
+  transform: scale(0, 1);
+  transition: transform 0.3s ease;
+}
+
+
+.navbar-page:hover::after {
+  transform: scale(1, 1);
+}
+
+.main-container {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.error-message {
+  border: #721c24 solid 1px;
+  border-radius: 5%;
+  background-color: #f8d7da;
+  color: #721c24;
+  text-align: center;
+  padding: .5em;
+}
+
+.dropbtn {
+  margin: 0 2em;
+  padding: .25em;
+  border-radius: 50%;
+  border: .1em solid var(--black-color);
+  cursor: pointer;
+  max-width: 25px;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: .2em solid var(--black-color);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 3rem;
+}
+
+.dropdown-content > a {
+  margin: 0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}

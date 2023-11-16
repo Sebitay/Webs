@@ -1,0 +1,43 @@
+{% extends 'auth/base.html' %}
+{% block title %} Log in {% endblock %}
+{% block css %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/login.css')}}"
+/>
+{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="logo">
+    <img
+      id="logo-login"
+      src="{{ url_for('static', filename='svg/confesiones.svg') }}"
+      alt="Logo de Confesiones 851"
+    />
+    <p id="bajada">Ingresa para mandar tu confesión 🥵</p>
+    {% if error %}
+    <div class="error-message">{{ error }}</div>
+    {% endif %}
+  </div>
+  <form class="formulario" id="login-form" action="login" method="post">
+    <div id="username-input" class="grupo-input">
+      <label for="username">Nombre de usuario</label>
+      <input id="username" name="username" type="text" minlength="4" required />
+    </div>
+    <div id="contrasenna-input" class="grupo-input">
+      <label for="contrasenna">Contraseña</label>
+      <input id="contrasenna" name="contrasenna" type="password" required />
+    </div>
+    <div class="botones">
+      <button type="submit" id="envio">Login</button>
+    </div>
+  </form>
+  <div class="footer-form">
+    No tienes una cuenta? <a href="{{ url_for('register') }}">Regístrate</a>
+  </div>
+</div>
+{% endblock %}
+{% block javascript %}
+<!-- <script lang="javascript" src="{{ url_for('static', filename='js/login.js') }}"></script> -->
+{% endblock %}

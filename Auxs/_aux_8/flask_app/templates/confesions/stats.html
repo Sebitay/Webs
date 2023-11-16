@@ -1,0 +1,24 @@
+{% extends 'confesions/base.html' %}
+
+{% block css %}
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/stats.css') }}"
+    />
+{% endblock %}
+
+{% block content %}    
+<div class="stats-container">
+    <figure class="highcharts-figure">
+        <div id="container"></div>
+        <p class="highcharts-description">
+            El anterior grafico presenta el numero de confesiones enviadas a lo largo del tiempo!
+        </p>
+    </figure>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="{{url_for('static', filename='js/stats.js')}}"></script>
+{% endblock %}

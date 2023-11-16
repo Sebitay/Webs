@@ -1,0 +1,13 @@
+{
+    "get_user_by_id": "SELECT id, username, email, password, profile_img FROM usuarios WHERE id=%s;",
+    "get_user_by_email": "SELECT id, username, email, password, profile_img FROM usuarios WHERE email=%s;",
+    "get_user_by_username": "SELECT id, username, email, password, profile_img FROM usuarios WHERE username=%s;",
+    "create_user": "INSERT INTO usuarios (username, password, email) VALUES (%s, %s, %s);",
+    "change_user_image": "UPDATE usuarios SET profile_img=%s WHERE username=%s;",
+    "get_user_image": "SELECT profile_img FROM usuarios WHERE username=%s",
+    "get_page_confessions": "SELECT * FROM confesiones ORDER BY id DESC LIMIT %s;",
+    "get_all_confessions": "SELECT * FROM confesiones ORDER BY id DESC;",
+    "create_confession": "INSERT INTO confesiones (conf_title, conf_text, conf_img, user_id, conf_timestamp) VALUES (%s, %s, %s, %s, %s);",
+    "get_all_likes": "SELECT conf_id, COUNT(*) FROM likes GROUP BY conf_id",
+    "create_like": "INSERT INTO likes (user_id, conf_id) VALUES (%s, %s)"
+}
